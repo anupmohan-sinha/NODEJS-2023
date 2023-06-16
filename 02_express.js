@@ -46,7 +46,7 @@ app.listen(8080, () => {
 
 
 //http://localhost:8080/ (GET)  (POST)
-//http://localhost:8080/demo  (GET) (POST)
+//http://localhost:8080/demo  (GET) (POST )
 
 
 
