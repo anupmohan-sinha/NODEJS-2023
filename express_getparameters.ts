@@ -22,7 +22,7 @@ app.listen(8080, () => {
 //req.query.upwd
 
 
-import * as express from 'express';
+/* import * as express from 'express';
 let app:any = express();
 app.get('/login/', (req:any, res:any): any => {
     if (req.query.uname === 'admin' && req.query.upwd === 'admin') {
@@ -35,5 +35,18 @@ app.get('/login/', (req:any, res:any): any => {
 app.listen(8080, () => {
     console.log('server started!');
     
-});
+}); */
 
+
+//http://localhost:8080/login/admin/mypassword get admin and mypassword from url in express js
+
+import * as express from 'express';
+let app: any = express();
+app.get('/login/:user/:password', (req:any, res:any) => {
+    const {user, password} = req.params;
+    res.status(200).json(`username : ${user}, password: ${password}`);
+    //res.status(200).json({'message': 'login successful!'});
+});
+app.listen(8080, () => {
+    console.log('server started!');
+})
